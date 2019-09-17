@@ -95,6 +95,8 @@ override func tearDown() {
    //check the initial state of the game
     XCTAssertEqual(initialRoundNumber, game.round);
     XCTAssertEqual(initialRoundPoints, game.scoreRound);
+    XCTAssertEqual(initialRoundPoints, game.scoreRound);
+    
     
   }
 }
