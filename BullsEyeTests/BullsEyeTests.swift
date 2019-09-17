@@ -100,7 +100,7 @@ class BullsEyeTests: XCTestCase {
     let initialTargetNumber=game.targetValue
    //check the initial state of the game
     XCTAssertEqual(initialRoundNumber, game.round);
-    XCTAssertEqual(initialRoundPoints, game.scoreRound)
+    XCTAssertEqual(initialRoundPoints, game.scoreRound);
     
     
     
