@@ -39,16 +39,12 @@ import XCTest
 
 
 class BullsEyeTests: XCTestCase {
-  
-  
-  
+
   //2. create global variable for bullsEyegame
   
   //java - BullsEyeGame game;
   
   var game : BullsEyeGame!
-  
-  
   
   override func setUp() {
     
@@ -60,9 +56,7 @@ class BullsEyeTests: XCTestCase {
     
   }
   
-  
-  
-  override func tearDown() {
+override func tearDown() {
     
     //4. close the game
     
@@ -101,9 +95,6 @@ class BullsEyeTests: XCTestCase {
    //check the initial state of the game
     XCTAssertEqual(initialRoundNumber, game.round);
     XCTAssertEqual(initialRoundPoints, game.scoreRound);
-    
-    
-    
     
   }
 }
