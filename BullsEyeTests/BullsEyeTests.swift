@@ -88,15 +88,21 @@ override func tearDown() {
   func testStartNewRound(){
    
    //start a new game
-    game.startNewGame()
+    game.startNewGame();
     let initialRoundNumber=1;
     let initialRoundPoints=0;
-    let initialTargetNumber=game.targetValue
+    let initialTargetNumber=game.targetValue;
    //check the initial state of the game
     XCTAssertEqual(initialRoundNumber, game.round);
     XCTAssertEqual(initialRoundPoints, game.scoreRound);
+    game.startNewRound();
+    
+    // check the round number
+    XCTAssertEqual(initialRoundNumber+1, game.round);
     XCTAssertEqual(initialRoundPoints, game.scoreRound);
     
+    //check that initial target number is greater than new target value.
+    XCTAssertNotEqual(initialTargetNumber, game.targetValue);
     
   }
 }
