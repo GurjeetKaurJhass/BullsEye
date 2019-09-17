@@ -102,8 +102,8 @@ override func tearDown() {
     XCTAssertEqual(initialRoundPoints, game.scoreRound);
     
     //check that initial target number is greater than new target value.
-    XCTAssertNotEqual(initialTargetNumber, game.targetValue);
-    
+   XCTAssertNotEqual(initialTargetNumber, game.targetValue);
+    //XCTAssertNotEqual(initialTargetNumber, game.targetValue);
   }
 }
 
