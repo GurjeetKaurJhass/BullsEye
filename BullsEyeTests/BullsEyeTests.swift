@@ -76,11 +76,13 @@ override func tearDown() {
   
   func testStartNewGame(){
     //start a new game
+     //start a new game
     game.startNewGame();
     //Check that starting round number =1;
     XCTAssertEqual(1, game.round);
     //Check that total sharing point=0;
     XCTAssertEqual(0, game.scoreTotal);
+    
   }
   
   
