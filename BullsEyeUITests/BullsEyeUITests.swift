@@ -28,88 +28,67 @@
 
 import XCTest
 
+class BullsEyeUITests: XCTestCase {
 
+    override func setUp() {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
 
-//1. tell the test case about what project you want to test
+        // In UI tests it is usually best to stop immediately when a failure occurs.
+        continueAfterFailure = false
 
-//give this file access to the functions and variables
+        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
+        XCUIApplication().launch()
 
-@testable import BullsEye
+        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    }
 
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
 
-
-class BullsEyeTests: XCTestCase {
-
-  //2. create global variable for bullsEyegame
-  
-  //java - BullsEyeGame game;
-  
-  var game : BullsEyeGame!
-  
-  override func setUp() {
-    
-    //3. initialize the global variable
-    
-    // JAVA: game = new BullsEyeGame
-    
-    game = BullsEyeGame();
-    
-  }
-  
-override func tearDown() {
-    
-    //4. close the game
-    
-    game = nil
-    
-    super.tearDown()
-    
-  }
-  
-  
-  
-  //R1: Test that a new game started correctly
-  
-  //expected output: round=0, total points= 0
-  
-  //expected output is actually that round = 1, not 0
-  
-  func testStartNewGame(){
-    //start a new game
-    game.startNewGame();
-    //Check that starting round number =1;
-    XCTAssertEqual(1, game.round);
-    //Check that total sharing point=0;
-    XCTAssertEqual(0, game.scoreTotal);
+    func testHitMeShowsAlertBOx() {
+      let app  = XCUIApplication()
+      
+      
+      
+      let hitmebutton = app.buttons["hit me!"]
+      
+      XCTAssertEqual(true, hitmebutton.exists)
+      
+      
+      
+      hitmebutton.tap()
+      
+      
+      
+      let alertBox = app.alerts
+      
+      XCTAssertNotNil(alertBox)
+      
+      
+      
   }
   
   
   
-  func testStartNewRound(){
-   
-   //start a new game
-    game.startNewGame();
-    let initialRoundNumber=1;
-    let initialRoundPoints=0;
-    let initialTargetNumber=game.targetValue;
-   //check the initial state of the game
-    XCTAssertEqual(initialRoundNumber, game.round);
-    XCTAssertEqual(initialRoundPoints, game.scoreRound);
-    game.startNewRound();
-    
-    // check the round number
-    XCTAssertEqual(initialRoundNumber+1, game.round);
-    XCTAssertEqual(initialRoundPoints, game.scoreRound);
-    
-    //check that initial target number is greater than new target value.
-    XCTAssertNotEqual(initialTargetNumber, game.targetValue);
-    //XCTAssertNotEqual(initialTargetNumber, game.targetValue);
+  // T2: By default, label at top of screen says
+  
+  // "Get as close as you can to:"
+  
+  func testDefaultLabelCode() {
     
     
+    
+    let guessWhereTheSliderIsStaticText = XCUIApplication().staticTexts["Guess where the slider is: "]
+    
+    guessWhereTheSliderIsStaticText.tap()
+            
+    
+      
+  
   }
   
   
-  //T1 :when person presses the Hit me button
-  //th
+  //func testPress
+
 }
-
